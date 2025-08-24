@@ -1,0 +1,4 @@
+pandas
+yfinance
+git+https://github.com/Snackman8/pyLinkJS.git
+numpy

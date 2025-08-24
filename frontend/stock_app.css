@@ -1,0 +1,42 @@
+/* Lean, functional styles for the interview prototype */
+
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+
+#plot-container {
+  margin-top: 18px;
+  width: 700px;
+}
+
+.stat-btn {
+  margin: 8px 4px 0 0;
+  padding: 5px 10px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  background: #f6f6f6;
+  cursor: pointer;
+}
+
+.stat-btn.active {
+  background: #a1caf1;
+  color: #001833;
+  border: 1.5px solid #285cc4;
+}
+
+#plot-error {
+  margin-top: 6px;
+  color: #d33;
+}
+
+.stat-error {
+  margin-top: 4px;
+  color: #a33;
+  font-size: 0.9em;
+}
+
+.input-error {
+  outline: 2px solid #d33;
+  outline-offset: 1px;
+}

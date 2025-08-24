@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Stock Data Line Plot</title>
+  <!-- Minimal styles live in stock_app.css -->
+  <link rel="stylesheet" href="frontend/stock_app.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- PyLinkJS client enables call_py(...) and Python -> JS callbacks -->
+  <script src="frontend/stock_app.js" defer></script>
+</head>
+<body>
+  <h2>Stock Data Line Plot</h2>
+
+  <div>
+    <label for="ticker-select">Ticker:</label>
+    <select id="ticker-select"></select>
+
+    <label for="start-date">From:</label>
+    <input type="date" id="start-date" />
+
+    <label for="end-date">To:</label>
+    <input type="date" id="end-date" />
+  </div>
+
+  <div id="plot-container">
+    <canvas id="stock-chart" width="680" height="350"></canvas>
+    <div id="plot-error" aria-live="polite"></div>
+  </div>
+
+  <div class="stat-controls">
+    <label>Show statistic:</label>
+    <button class="stat-btn" id="mean-btn" onclick="toggleStatLine('mean')">Mean</button>
+    <button class="stat-btn" id="median-btn" onclick="toggleStatLine('median')">Median</button>
+    <button class="stat-btn" id="std-btn" onclick="toggleStatLine('std')">Std Dev</button>
+    <div class="stat-errors">
+      <div id="mean-error" class="stat-error"></div>
+      <div id="median-error" class="stat-error"></div>
+      <div id="std-error" class="stat-error"></div>
+    </div>
+  </div>
+  
+  <div class="web-app-tools">
+    <hr>
+    <p>Made using the following tools:</p>
+    <p>PyLinkJS as a bridge between JS frontend and Python backend.</p>
+    <p>ChartJS library to plot stock data.</p>
+    <p>Yfinance library to gather stock data.</p>
+    <p>    Example Yfinance Python request: df = yf.download("AAPL", period="1y", interval="1d", auto_adjust=True)</p>
+  </div>
+</body>
+</html>
