@@ -1,6 +1,6 @@
 /* jshint esversion: 6 */
 /**
- * Frontend logic for the interview prototype.
+ * Frontend logic for stock web app.
  *
  * Flow:
  *  - Python calls window.initApp(...) on load to seed tickers and default dates.

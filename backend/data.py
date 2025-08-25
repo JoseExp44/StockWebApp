@@ -12,7 +12,7 @@ import yfinance as yf
 from .config import TICKERS, DATA_DIR, DOWNLOAD_PERIOD, DOWNLOAD_INTERVAL
 
 
-def download_data() -> None:
+def download_data():
     """
     Download historical data for each configured ticker and cache to CSV.
 
@@ -42,7 +42,7 @@ def download_data() -> None:
             print(f"Error downloading {ticker}: {e}")
 
 
-def load_data(ticker: str) -> pd.DataFrame:
+def load_data(ticker):
     """
     Load cached CSV for a ticker.
 
@@ -60,7 +60,7 @@ def load_data(ticker: str) -> pd.DataFrame:
     return df
 
 
-def filter_by_date(df: pd.DataFrame, start: str, end: str) -> pd.DataFrame:
+def filter_by_date(df, start, end):
     """
     Return rows with Date between start and end (inclusive).
 

@@ -1,5 +1,5 @@
 """
-Entry point for the interview prototype.
+Entry point.
 
 - Downloads/caches data for a small ticker list.
 - Registers PyLinkJS handlers that the frontend will call.
@@ -10,14 +10,13 @@ from backend.config import SERVER_PORT
 from backend.data import download_data
 from backend import handlers
 from pylinkjs import PyLinkJS
-from pathlib import Path
 
 
-def main() -> None:
+def main():
     """Bootstrap the app: fetch data, register handlers, start the server."""
     print("Downloading stock data for all tickers...")
     download_data()
-    print("Download complete.current")
+    print("Download complete.")
 
     # Register Python functions that can be invoked from the frontend via call_py(...)
     PyLinkJS.ready = handlers.ready

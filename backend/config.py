@@ -1,5 +1,5 @@
 """
-Configuration values for the prototype.
+Configuration values.
 
 These serve as a single source of truth so the rest of the codebase
 doesn't hard‑code magic strings/paths. Values are intentionally small/simple.

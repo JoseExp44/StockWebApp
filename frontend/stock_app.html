@@ -24,8 +24,8 @@
   </div>
 
   <div id="plot-container">
-    <canvas id="stock-chart" width="680" height="350"></canvas>
-    <div id="plot-error" aria-live="polite"></div>
+    <canvas id="stock-chart" width="700" height="350"></canvas>
+    <div id="plot-error"></div>
   </div>
 
   <div class="stat-controls">
@@ -41,12 +41,20 @@
   </div>
   
   <div class="web-app-tools">
-    <hr>
-    <p>Made using the following tools:</p>
-    <p>PyLinkJS as a bridge between JS frontend and Python backend.</p>
-    <p>ChartJS library to plot stock data.</p>
-    <p>Yfinance library to gather stock data.</p>
-    <p>    Example Yfinance Python request: df = yf.download("AAPL", period="1y", interval="1d", auto_adjust=True)</p>
+  <hr>
+  <p>Made using the following tools:</p>
+  <ul>
+    <li>PyLinkJS as a bridge between JS frontend and Python backend.</li>
+    <li>ChartJS library to plot stock data.</li>
+    <li>
+      Yfinance library to gather stock data.
+      <ul>
+        <li>Example Yfinance Python request:
+          <code>yf.download("AAPL", period="1y", interval="1d", auto_adjust=True)</code>
+        </li>
+      </ul>
+    </li>
+  </ul>
   </div>
 </body>
 </html>

@@ -19,7 +19,7 @@ from .config import TICKERS, DATA_DIR
 from .data import load_data, filter_by_date
 
 
-def ready(jsc, origin, pathname, search, *args) -> None:
+def ready(jsc, origin, pathname, search, *args):
     """
     Initialize the frontend by sending available tickers and default dates.
 
@@ -51,7 +51,7 @@ def ready(jsc, origin, pathname, search, *args) -> None:
     )
 
 
-def get_plot_data(jsc, ticker: str, start: str, end: str) -> None:
+def get_plot_data(jsc, ticker, start, end):
     """
     Provide X (date strings) and Y (Close prices) for the chart, or an error message.
 
@@ -73,7 +73,7 @@ def get_plot_data(jsc, ticker: str, start: str, end: str) -> None:
     jsc.eval_js_code(f"window.plotStockData({x}, {y}, null);")
 
 
-def get_stat_value(jsc, ticker: str, start: str, end: str, stat: str) -> None:
+def get_stat_value(jsc, ticker, start, end, stat):
     """
     Compute a requested statistic and return overlay line(s) for the chart.
 
