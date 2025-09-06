@@ -3,7 +3,7 @@ Data access layer.
 
 - download_data: fetch and cache CSVs per ticker (auto-adjusted prices).
 - load_data: load a single ticker's CSV into a DataFrame.
-- filter_by_date: return a slice of rows within [start, end] inclusive.
+- filter_by_date: return rows within [start, end] inclusive.
 """
 
 import os

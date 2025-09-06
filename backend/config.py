@@ -1,14 +1,15 @@
 """
 Configuration values.
 
-These serve as a single source of truth so the rest of the codebase
-doesn't hard‑code magic strings/paths. Values are intentionally small/simple.
+- Ticker Download Config: TICKERS, DOWNLOAD_PERIOD, DOWNLOAD_INTERVAL, DATA_DIR
+- SERVER_PORT
+- Creates DATA_DIR to ensure it exists at import time 
 """
 
 import os
 
 # Ticker Data
-TICKERS = ['AAPL', 'MSFT', 'IBM']
+TICKERS = ['AAPL', 'MSFT', 'IBM'] # Stock symbols
 DOWNLOAD_PERIOD = "1y"    # lookback window before "now"
 DOWNLOAD_INTERVAL = "1d"  # daily sampling
 DATA_DIR = os.path.join(os.path.dirname(__file__), "..", "data")

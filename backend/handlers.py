@@ -15,6 +15,7 @@ Conventions:
 import os
 import pandas as pd
 import numpy as np
+from datetime import date, timedelta
 from .config import TICKERS, DATA_DIR
 from .data import load_data, filter_by_date
 
@@ -31,19 +32,8 @@ def ready(jsc, origin, pathname, search, *args):
     """
     tickers = [t for t in TICKERS if os.path.exists(os.path.join(DATA_DIR, f"{t}.csv"))]
 
-    # Build a single list of all dates across available tickers to choose defaults
-    all_dates = []
-    for t in tickers:
-        df = load_data(t)
-        if not df.empty:
-            all_dates += list(df["Date"])
-
-    default_start = default_end = None
-    if all_dates:
-        all_dates = pd.to_datetime(all_dates, errors='coerce').dropna()
-        max_date = all_dates.max().date()
-        default_end = max_date
-        default_start = max(all_dates.min().date(), (default_end - pd.Timedelta(days=30)))
+    default_end = date.today()
+    default_start = default_end - timedelta(days=30)
 
     # Dates to strings for the date inputs
     jsc.eval_js_code(

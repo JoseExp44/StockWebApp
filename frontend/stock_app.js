@@ -69,14 +69,10 @@ function fetchPlotData() {
   
   if (chart) chart.destroy();
 
-  // Minimal client validation: valid dates and start <= end
-  const startDate = new Date(startVal), endDate = new Date(endVal);
-  if (isNaN(startDate.getTime()) || isNaN(endDate.getTime())) {
-    plotErrorDiv.textContent = ERR_INVALID_DATES;
-    if (isNaN(startDate.getTime())) startDateInput.classList.add("input-error");
-    if (isNaN(endDate.getTime()))   endDateInput.classList.add("input-error");
-    return;
-  }
+  // Minimal client validation: start <= end
+  const startDate = new Date(startVal);
+  const endDate = new Date(endVal);
+  
   if (startDate > endDate) {
     plotErrorDiv.textContent = ERR_START_AFTER_END;
     startDateInput.classList.add("input-error");
